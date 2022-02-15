@@ -21,12 +21,12 @@ pipeline {
         }
 
 
-        stage('Cucumber Reports'){
-        steps{
-        cucumber buildStatus: "UNSTABLE",
-        fileIncludePattern:"**/cucumber.json",
-        jsonReportDirectory: 'target'
-        }
+        stage ('Deployment Stage') {
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    sh 'mvn deploy'
+                }
+            }
         }
     }
 }
