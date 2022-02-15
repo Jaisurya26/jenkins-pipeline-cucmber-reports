@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features="src/test/resources",
+        features="src/test/resources/FizzBuzz.feature",
         glue = "com.fizzbuzz.testing",
         plugin = {"json:target/cucumber.json"}
 )
